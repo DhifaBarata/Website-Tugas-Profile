@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Guyon Waton</title>
+  <style>
+    :root{
+      --bg: #070815;
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.10);
+      --line: rgba(255,255,255,0.14);
+      --text: #e9e7ff;
+      --muted: #bdb7ff;
+      --accent: #a855f7;   /* ungu neon */
+      --accent2:#22d3ee;   /* cyan */
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(168,85,247,0.30), transparent 60%),
+        radial-gradient(700px 450px at 85% 30%, rgba(34,211,238,0.22), transparent 55%),
+        radial-gradient(900px 600px at 50% 100%, rgba(99,102,241,0.18), transparent 60%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    .wrap{
+      width: 920px;
+      max-width: 92vw;
+      margin: 28px auto;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.35);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.45);
+      overflow: hidden;
+    }
+
+    header{
+      padding: 18px 22px 12px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(168,85,247,0.18), rgba(34,211,238,0.10));
+    }
+
+    .brand{
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    .brand span{
+      color: var(--accent2);
+      text-shadow: 0 0 10px rgba(34,211,238,0.35);
+    }
+
+    nav{
+      display:flex;
+      gap: 10px;
+      padding: 10px 18px;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--line);
+      flex-wrap: wrap;
+    }
+    nav a{
+      text-decoration:none;
+      color: var(--text);
+      padding: 8px 12px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      transition: 0.2s ease;
+      font-size: 14px;
+    }
+    nav a:hover{
+      border-color: rgba(168,85,247,0.55);
+      background: rgba(168,85,247,0.12);
+      transform: translateY(-1px);
+    }
+
+    .hero{
+      padding: 16px 18px 6px;
+    }
+    .hero-card{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--panel);
+    }
+    .hero-card img{
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display:block;
+      filter: contrast(1.05) saturate(1.05);
+    }
+    .hero-caption{
+      padding: 12px 14px;
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      gap: 12px;
+      background: rgba(0,0,0,0.22);
+      border-top: 1px solid var(--line);
+    }
+    .hero-caption h2{
+      margin:0;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .badge{
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #0b1020;
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      font-weight: 700;
+    }
+
+    .section{
+      display:grid;
+      grid-template-columns: 170px 1fr 170px; 
+      gap: 14px;
+      padding: 14px 18px;
+      border-top: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .side-card{
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow:hidden;
+      background: var(--panel);
+    }
+    .side-card img{
+      width:100%;
+      height: 170px;
+      object-fit: cover;
+      display:block;
+    }
+    .side-card .tag{
+      padding: 8px 10px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: rgba(0,0,0,0.18);
+    }
+
+    .content{
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel2);
+      padding: 12px 14px;
+    }
+    .content h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .content p{
+      margin: 0;
+      line-height: 1.55;
+      color: #d7d5ff;
+      font-size: 14px;
+    }
+
+    footer{
+      padding: 12px 18px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 760px){
+      .section{
+        grid-template-columns: 1fr;
+      }
+      .side-card img{ height: 220px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Profile<span> Guyon Waton</span></div>
+    </header>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#profil">Profil</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#jadwal">Jadwal</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <section class="hero" id="home">
+      <div class="hero-card">
+        <img src="src/Profile Guyon Waton.webp" alt="Hero" />
+        <div class="hero-caption">
+          <h2>Guyon Waton • 2026</h2>
+          <div class="badge">NEW Profile</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="profil">
+      <div class="side-card">
+        <img src="src/Vokalis Guyon waton.webp" alt="Profile 1">
+        <div class="tag">Bagas Setyo Budi • Vokalis Utama</div>
+      </div>
+
+      <div class="content">
+        <h3>Bagas Setyo Budi</h3>
+        <p>
+          Bagas dikenal sebagai vokalis utama dengan karakter suara yang khas dan emosional. Ia menjadi salah satu wajah utama Guyon Waton sejak awal terbentuknya grup ini. Bagas mampu menyampaikan lagu-lagu patah hati dengan ekspresi yang kuat sehingga mudah diterima oleh pendengar, terutama dalam lagu-lagu berbahasa Jawa.
+        </p>
+      </div>
+
+      <div class="side-card">
+        <img src="src/Hg1.jpg" alt="Profile 1 alt">
+        <div class="tag">Highlight Zoom Vokalis</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="side-card">
+        <img src="src/Gitaris.jpg" alt="Profile 2">
+        <div class="tag">Arief Setiawan • Gitaris</div>
+      </div>
+
+      <div class="content">
+        <h3>Arief Setiawan</h3>
+        <p>
+          Arief berperan sebagai gitaris yang memberikan warna musik pada aransemen lagu-lagu Guyon Waton. Permainan gitarnya sering menjadi penguat nuansa pop dan akustik yang khas dalam lagu-lagu mereka.
+        </p>
+      </div>
+
+      <div class="side-card">
+        <img src="src/Hg2.jpg" alt="Profile 2 alt">
+        <div class="tag">Futuristic</div>
+      </div>
+    </section>
+
+    <section class="section" id="galeri">
+      <div class="side-card">
+        <img src="src/Drumer.jpg" alt="Profile 3">
+        <div class="tag">Adi Pratama • Kendang</div>
+      </div>
+
+      <div class="content">
+        <h3>Adi Pratama</h3>
+        <p>
+          Adi bertugas memainkan kendang atau perkusi yang memberi nuansa campursari dan dangdut dalam musik Guyon Waton. Ritme yang ia ciptakan membuat lagu-lagu mereka terasa lebih hidup dan mudah dinikmati.
+          Kamu bisa isi bagian ini dengan biodata asli (tanggal lahir, asal, dll).
+        </p>
+      </div>
+
+      <div class="side-card">
+        <img src="src/Hg3.jpg" alt="Profile 3 alt">
+        <div class="tag">Elegant</div>
+      </div>
+    </section>
+
+    <section class="section" id="jadwal">
+      <div class="side-card">
+        <img src="src/Bass.jpg" alt="Profile 4">
+        <div class="tag">Indra Setiawan • Bassis</div>
+      </div>
+
+      <div class="content">
+        <h3>Indra Setiawan</h3>
+        <p>
+          Indra memainkan bass yang menjadi fondasi ritme dalam aransemen lagu Guyon Waton. Permainan bass-nya membantu menjaga keseimbangan antara melodi vokal dan instrumen lainnya.
+        </p>
+      </div>
+
+      <div class="side-card">
+        <img src="src/Hg4.jpg" alt="Profile 4 alt">
+        <div class="tag">Panggung Bersama Guyon Waton</div>
+      </div>
+    </section>
+
+    <footer id="kontak">
+      Dibuat oleh: Dhifa Barata Putra • Tema: Neon Galaxy • © 2026
+    </footer>
+  </div>
+</body>
+</html>
